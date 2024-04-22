@@ -1,0 +1,276 @@
+
+BUILD STAGE 1 :: INSTALL THE REQUIRED TOOLS
+
+[3J[H[2J
+------------------------------------[[[[ Install-Tools-On-MacOS-Or-Linux ]]]]------------------------------------
+
+This command will install all of the required Node.js packages. This script was created on MacOS, but can be used in any Linux Distro that has curl installed. This run started on Mon Apr 22 04:04:39 EDT 2024.
+
+=> nvm is already installed in /Users/jgorospe/.nvm, trying to update using git
+=> => Compressing and cleaning up git repository
+
+=> nvm source string already in /Users/jgorospe/.bashrc
+=> bash_completion source string already in /Users/jgorospe/.bashrc
+=> Close and reopen your terminal to start using nvm or run the following to use it now:
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+Now using node v18.20.2 (npm v10.5.2)
+Now using node v18.20.2 (npm v10.5.2)
+[0;32mdefault[0m [0;90m->[0m [0;32m18[0m ([0;90m->[0m [0;32mv18.20.2[0m)
+v18.20.2
+
+added 1 package, and audited 637 packages in 4s
+
+119 packages are looking for funding
+  run `npm fund` for details
+
+2 vulnerabilities (1 moderate, 1 high)
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+Hardhat version 2.22.3
+
+Usage: hardhat [GLOBAL OPTIONS] [SCOPE] <TASK> [TASK OPTIONS]
+
+GLOBAL OPTIONS:
+
+  --config           	A Hardhat config file. 
+  --emoji            	Use emoji in messages. 
+  --flamegraph       	Generate a flamegraph of your Hardhat tasks 
+  --help             	Shows this message, or a task's help if its name is provided 
+  --max-memory       	The maximum amount of memory that Hardhat can use. 
+  --network          	The network to connect to. 
+  --show-stack-traces	Show stack traces (always enabled on CI servers). 
+  --tsconfig         	A TypeScript config file. 
+  --typecheck        	Enable TypeScript type-checking of your scripts/tests 
+  --verbose          	Enables Hardhat verbose logging 
+  --version          	Shows hardhat's version. 
+
+
+AVAILABLE TASKS:
+
+  accounts                            	Prints the list of accounts
+  balance                             	Prints an account's balances of native and LINK tokens
+  block-number                        	Prints the current block number
+  check                               	Check whatever you need
+  clean                               	Clears the cache and deletes all artifacts
+  compile                             	Compiles the entire project, building all artifacts
+  console                             	Opens a hardhat console
+  coverage                            	Generates a code coverage report for tests
+  flatten                             	Flattens and prints contracts and their dependencies. If no file is passed, all the contracts in the project will be flattened.
+  gas-reporter:merge                  	
+  help                                	Prints this message
+  node                                	Starts a JSON-RPC server on top of Hardhat Network
+  read-automation-counter             	Gets the value of the counter from the Counter contract used to demo Chainlink Automation
+  read-data                           	Calls an API Consumer Contract to read data obtained from an external API
+  read-price-feed                     	Gets the latest price from a Chainlink Price Feed
+  read-price-feed-ens                 	Gets the latest price from a Chainlink Price Feed
+  read-random-number                  	Reads the random number returned to a contract by Chainlink VRF Subscription Method
+  read-random-number-direct-funding   	Reads the random number returned to a contract by Chainlink VRF Direct Funding method
+  request-data                        	Calls an API Consumer Contract to request external data
+  request-random-number               	Requests a random number for a Chainlink VRF enabled smart contract using the Subscription method
+  request-random-number-direct-funding	Requests a random number for a Chainlink VRF enabled smart contract using the Direct Funding method
+  run                                 	Runs a user-defined script after compiling the project
+  test                                	Runs mocha tests
+  transfer-link                       	Transfer LINK tokens to a recipient
+  typechain                           	Generate Typechain typings for compiled contracts
+  verify                              	Verifies contract on Etherscan
+  withdraw-link                       	Returns any LINK left in deployed contract
+
+
+AVAILABLE TASK SCOPES:
+
+  vars                                	Manage your configuration variables
+
+To get help for a specific task run: npx hardhat help [SCOPE] <TASK>
+
+
+
+This run ended on Mon Apr 22 04:06:10 EDT 2024.
+
+
+------------------------------------[[[[ Tool Runner Script ]]]]------------------------------------
+
+
+This tool runner script can be used to run the following commands to deploy the Solidity examples from the Patrick Collins FCC Solidity YouTube course.
+
+You can view just this help menu again (without triggering any automation) by running 'bash ./Lesson11CodeSessions_start-deployment-scripts.sh -h' or 'bash ./Lesson11CodeSessions_start-deployment-scripts.sh -h --help'.
+
+bash ./Lesson11CodeSessions_start-deployment-scripts.sh Stop-Local-Blockchain-Nodes-Clean-Environment
+bash ./Lesson11CodeSessions_start-deployment-scripts.sh Install-Tools-On-MacOS-Or-Linux
+bash ./Lesson11CodeSessions_start-deployment-scripts.sh Start-Deployment-On-Local-Default-Hardhat-Node
+bash ./Lesson11CodeSessions_start-deployment-scripts.sh Start-Deployment-On-Real-Ethereum-Testnet
+bash ./Lesson11CodeSessions_start-deployment-scripts.sh Start-Hardhat-Test
+
+If you're running this for the first time run the following before running any of these scripts.
+
+bash ./Lesson11CodeSessions_start-deployment-scripts.sh Install-Tools-On-MacOS-Or-Linux
+
+Then you can run the following combined commands in your terminal to deploy the contract to the Hardhat local blockchain node.
+
+bash ./Lesson11CodeSessions_start-deployment-scripts.sh Stop-Local-Blockchain-Nodes && bash ./Lesson11CodeSessions_start-deployment-scripts.sh Start-Deployment-On-Local-Default-Hardhat-Node hardhat
+
+You can also use the provided Lesson11CodeSessions_start-automation-build-pipeline.sh to run all the above commands in a sequence similar to a build pipeline.
+
+bash ./Lesson11CodeSessions_start-automation-build-pipeline.sh
+
+
+
+BUILD STAGE 2 :: TEST THE DEPLOYED SMART CONTRACT(S) ON A LOCAL BLOCKCHAIN NODE
+
+[3J[H[2J
+------------------------------------[[[[ Start-Hardhat-Test ]]]]------------------------------------
+
+This command will run the Start-Hardhat-Test script. This run started on Mon Apr 22 04:06:12 EDT 2024.
+
+Compiled 53 Solidity files successfully (evm targets: istanbul, london, unknown evm version for solc version 0.4.24).
+
+  API Consumer Unit Tests
+    #requestVolumeData
+      success
+        ✔ Should successfully make an API request
+        ✔ Should successfully make an API request and get a result
+DataFullfilled event fired!
+        ✔ Our event should successfully fire event on callback
+
+  Automation Counter Unit Tests
+    #checkUpkeep
+      success
+        ✔ should be able to call checkUpkeep
+    #performUpkeep
+      success
+        ✔ should be able to call performUpkeep after time passes
+      failure
+        ✔ should not be able to call perform upkeep without the time passed interval
+
+  Price Consumer Unit Tests
+    deployment
+      success
+        ✔ should set the aggregator addresses correctly
+    #getLatestPrice
+      success
+        ✔ should return the same value as the mock
+
+  Random Number Consumer Unit Tests
+    #requestRandomWords
+      success
+        ✔ Should successfully request a random number
+        ✔ Should successfully request a random number and get a result
+ReturnedRandomness event fired!
+        ✔ Should successfully fire event on callback
+
+  Random Number Direct Funding Consumer Unit Tests
+    #requestRandomWords
+      success
+        ✔ Should successfully request a random number
+price 7873333333333333332
+paid 7873333333333333332
+wrapper balance 7873333333333333332
+initial subscription balance 100000000000000000000
+final subscription balance 99899892950000000000
+paid by wrapper 100107050000000000
+wrapperPremium 7773226283333333332
+percentage 98
+        ✔ Should successfully request a random number and get a result
+        ✔ Should be able to request several random words
+      error
+        ✔ Cannot request randomness without funding wrapper
+        ✔ Cannot request more than maxNumWords 
+        ✔ Cannot fulfill if callback gasLimit too low 
+
+
+  17 passing (10s)
+
+·--------------------------------------------------------------------------|----------------------------|-------------|-----------------------------·
+|                           Solc version: 0.8.7                            ·  Optimizer enabled: false  ·  Runs: 200  ·  Block limit: 30000000 gas  │
+···········································································|····························|·············|······························
+|  Methods                                                                                                                                          │
+········································|··································|··············|·············|·············|···············|··············
+|  Contract                             ·  Method                          ·  Min         ·  Max        ·  Avg        ·  # calls      ·  usd (avg)  │
+········································|··································|··············|·············|·············|···············|··············
+|  APIConsumer                          ·  requestVolumeData               ·           -  ·          -  ·     150631  ·            6  ·          -  │
+········································|··································|··············|·············|·············|···············|··············
+|  AutomationCounter                    ·  performUpkeep                   ·           -  ·          -  ·      49948  ·            1  ·          -  │
+········································|··································|··············|·············|·············|···············|··············
+|  LinkToken                            ·  transfer                        ·       51806  ·      51818  ·      51817  ·           11  ·          -  │
+········································|··································|··············|·············|·············|···············|··············
+|  MockOracle                           ·  fulfillOracleRequest            ·           -  ·          -  ·      52568  ·            2  ·          -  │
+········································|··································|··············|·············|·············|···············|··············
+|  RandomNumberConsumerV2               ·  requestRandomWords              ·           -  ·          -  ·      94850  ·            4  ·          -  │
+········································|··································|··············|·············|·············|···············|··············
+|  RandomNumberDirectFundingConsumerV2  ·  requestRandomWords              ·           -  ·          -  ·     369851  ·            6  ·          -  │
+········································|··································|··············|·············|·············|···············|··············
+|  VRFCoordinatorV2Mock                 ·  addConsumer                     ·           -  ·          -  ·      71455  ·            1  ·          -  │
+········································|··································|··············|·············|·············|···············|··············
+|  VRFCoordinatorV2Mock                 ·  createSubscription              ·           -  ·          -  ·      68632  ·            2  ·          -  │
+········································|··································|··············|·············|·············|···············|··············
+|  VRFCoordinatorV2Mock                 ·  fulfillRandomWords              ·           -  ·          -  ·     110415  ·            3  ·          -  │
+········································|··································|··············|·············|·············|···············|··············
+|  VRFCoordinatorV2Mock                 ·  fulfillRandomWordsWithOverride  ·      119197  ·     264263  ·     178204  ·            9  ·          -  │
+········································|··································|··············|·············|·············|···············|··············
+|  VRFCoordinatorV2Mock                 ·  fundSubscription                ·       30433  ·      30445  ·      30439  ·            2  ·          -  │
+········································|··································|··············|·············|·············|···············|··············
+|  VRFV2Wrapper                         ·  setConfig                       ·           -  ·          -  ·     146537  ·            1  ·          -  │
+········································|··································|··············|·············|·············|···············|··············
+|  Deployments                                                             ·                                          ·  % of limit   ·             │
+···········································································|··············|·············|·············|···············|··············
+|  APIConsumer                                                             ·           -  ·          -  ·    1404981  ·        4.7 %  ·          -  │
+···········································································|··············|·············|·············|···············|··············
+|  AutomationCounter                                                       ·           -  ·          -  ·     448178  ·        1.5 %  ·          -  │
+···········································································|··············|·············|·············|···············|··············
+|  LinkToken                                                               ·           -  ·          -  ·    1279067  ·        4.3 %  ·          -  │
+···········································································|··············|·············|·············|···············|··············
+|  MockOracle                                                              ·           -  ·          -  ·    1131081  ·        3.8 %  ·          -  │
+···········································································|··············|·············|·············|···············|··············
+|  MockV3Aggregator                                                        ·      569659  ·     569671  ·     569667  ·        1.9 %  ·          -  │
+···········································································|··············|·············|·············|···············|··············
+|  PriceConsumerV3                                                         ·           -  ·          -  ·     245612  ·        0.8 %  ·          -  │
+···········································································|··············|·············|·············|···············|··············
+|  RandomNumberConsumerV2                                                  ·           -  ·          -  ·     564345  ·        1.9 %  ·          -  │
+···········································································|··············|·············|·············|···············|··············
+|  RandomNumberDirectFundingConsumerV2                                     ·           -  ·          -  ·    1549553  ·        5.2 %  ·          -  │
+···········································································|··············|·············|·············|···············|··············
+|  VRFCoordinatorV2Mock                                                    ·           -  ·          -  ·    2539340  ·        8.5 %  ·          -  │
+···········································································|··············|·············|·············|···············|··············
+|  VRFV2Wrapper                                                            ·           -  ·          -  ·    2709886  ·          9 %  ·          -  │
+·--------------------------------------------------------------------------|--------------|-------------|-------------|---------------|-------------·
+
+This run ended on Mon Apr 22 04:06:38 EDT 2024.
+
+
+------------------------------------[[[[ Tool Runner Script ]]]]------------------------------------
+
+
+This tool runner script can be used to run the following commands to deploy the Solidity examples from the Patrick Collins FCC Solidity YouTube course.
+
+You can view just this help menu again (without triggering any automation) by running 'bash ./Lesson11CodeSessions_start-deployment-scripts.sh -h' or 'bash ./Lesson11CodeSessions_start-deployment-scripts.sh -h --help'.
+
+bash ./Lesson11CodeSessions_start-deployment-scripts.sh Stop-Local-Blockchain-Nodes-Clean-Environment
+bash ./Lesson11CodeSessions_start-deployment-scripts.sh Install-Tools-On-MacOS-Or-Linux
+bash ./Lesson11CodeSessions_start-deployment-scripts.sh Start-Deployment-On-Local-Default-Hardhat-Node
+bash ./Lesson11CodeSessions_start-deployment-scripts.sh Start-Deployment-On-Real-Ethereum-Testnet
+bash ./Lesson11CodeSessions_start-deployment-scripts.sh Start-Hardhat-Test
+
+If you're running this for the first time run the following before running any of these scripts.
+
+bash ./Lesson11CodeSessions_start-deployment-scripts.sh Install-Tools-On-MacOS-Or-Linux
+
+Then you can run the following combined commands in your terminal to deploy the contract to the Hardhat local blockchain node.
+
+bash ./Lesson11CodeSessions_start-deployment-scripts.sh Stop-Local-Blockchain-Nodes && bash ./Lesson11CodeSessions_start-deployment-scripts.sh Start-Deployment-On-Local-Default-Hardhat-Node hardhat
+
+You can also use the provided Lesson11CodeSessions_start-automation-build-pipeline.sh to run all the above commands in a sequence similar to a build pipeline.
+
+bash ./Lesson11CodeSessions_start-automation-build-pipeline.sh
+
+
+
+
+
+ALL TESTS PASSED. DEPLOYMENT TO THE ETHEREUM TESTNET WILL CONTINUE.
+
+
