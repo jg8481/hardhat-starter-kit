@@ -68,9 +68,9 @@ if [ "$1" == "Start-Deployment-On-Local-Default-Hardhat-Node" ]; then
   sleep 10
   echo
   echo
-  echo "-------->>>> Deployment Results Log :: $1 :: $2 <<<<--------" > ./logs/hardhat-contract-ethereum-testnet-deployment.log
-  npm run deploy --network $2 >> ./logs/hardhat-contract-ethereum-testnet-deployment.log &&
-  cat ./logs/hardhat-contract-ethereum-testnet-deployment.log
+  echo "-------->>>> Deployment Results Log :: $1 :: $2 <<<<--------" > ./logs/hardhat-contract-specific-deployment.log
+  npm run deploy --network $2 >> ./logs/hardhat-contract-specific-deployment.logg &&
+  cat ./logs/hardhat-contract-specific-deployment.log
   echo
   echo
   TIMESTAMP2=$(date)
